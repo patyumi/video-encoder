@@ -1,7 +1,7 @@
 package domain_test
 
 import (
-	"encoder/domain"
+	"github.com/patyumi/video-encoder/domain"
 	"testing"
 	"time"
 

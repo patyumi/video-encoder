@@ -9,3 +9,5 @@ services:
 
       # docker-compose up -d
       # docker-compose exec app bash
+      # cd encoder
+      # go start
