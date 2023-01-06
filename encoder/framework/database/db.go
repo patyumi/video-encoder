@@ -28,7 +28,7 @@ func NewDb() *Database {
 // Roda um teste antes de rodar o db
 func NewDbTest() *gorm.DB {
 	dbInstance := NewDb()
-	dbInstance.Env = "Test"
+	dbInstance.Env = "test"
 	dbInstance.DbTypeTest = "sqlite3"
 	dbInstance.DsnTest = ":memory:"
 	dbInstance.AutoMigrateDb = true
@@ -61,7 +61,7 @@ func (d *Database) Connect() (*gorm.DB, error) {
 	}
 
 	if d.AutoMigrateDb {
-		d.Db.AutoMigrate(&domain.Video{}, &domain.Job)
+		d.Db.AutoMigrate(&domain.Video{}, &domain.Job{})
 		d.Db.Model(domain.Job{}).AddForeignKey("video_id", "videos (id)", "CASCADE", "CASCADE")
 	}
 
